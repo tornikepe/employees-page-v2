@@ -1,0 +1,44 @@
+<div class="container">
+    <h1>Sign Up</h1>
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label class="required">Nickname </label>
+                    <input type="text" class="form-control" formControlName="name">
+                    <p style="color: red;" *ngIf="!form.controls['name'].valid && form.controls['name'].touched">
+                        Nickname is not valid</p>
+                </div>
+                <div class="form-group">
+                    <label class="required">E-mail </label>
+                    <input type="email" class="form-control" formControlName="email">
+                    <p style="color: red;" *ngIf="!form.controls['email'].valid && form.controls['email'].touched">Email
+                        is not valid</p>
+                </div>
+                <ng-container formGroupName="passGroup">
+                    <div class="form-group">
+                        <label class="required">Password </label>
+                        <input type="password" class="form-control" formControlName="password">
+                        <p style="color: red;"
+                            *ngIf="form.get('passGroup.password')?.errors?.['required'] && form.get('passGroup.password')?.touched">
+                            Password is not valid</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="required">Confirm Password </label>
+                        <input type="password" class="form-control" formControlName="confirmPassword">
+                        <p style="color: red;" *ngIf="form.get('passGroup')?.errors?.['mismatch']">Confirm Password is
+                            not same</p>
+                    </div>
+                </ng-container>
+                <div class="form-group">
+                    <label class="required">Phone Number </label>
+                    <input type="text" class="form-control" formControlName="number">
+                    <p style="color: red;" *ngIf="!form.controls['number'].valid && form.controls['number'].touched">
+                        Phone number is not valid</p>
+                </div>
+                <button [disabled]="!form.valid" class="btn">Sign Up</button>
+                <button [routerLink]="['/login']" class="btn">Log In</button>
+            </form>
+        </div>
+    </div>
+</div>

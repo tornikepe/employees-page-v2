@@ -1,0 +1,26 @@
+h1{
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 30px;
+    color: #144947;
+}
+input{
+    height: 30px;
+}
+button{
+    border: 1px solid #144947;
+    margin-right: 15px;
+}
+
+label{
+    color: #144947;
+    font-weight: normal;
+}
+.container{
+    width: 420px;
+}
+p{
+    text-align: end;
+    margin-right: 20px;
+    font-size: 20px;
+}

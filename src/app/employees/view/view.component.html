@@ -1,0 +1,9 @@
+<div *ngIf="viewUser" id="center">
+  <p>Nickname - <span>{{viewUser.name}} </span></p>
+  <p>Email - <span>{{viewUser.email}}</span></p>
+  <p>Phone Number - <span>{{viewUser.number}}</span></p>
+
+  <div>
+    <button [routerLink]="['/employees']" class="btn">Users</button>
+  </div>
+</div>

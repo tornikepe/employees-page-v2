@@ -1,0 +1,27 @@
+<p>Email: me@gmail.com</p>
+<p>Password: me123123</p>
+<br>
+<p>Email: shen@gmail.com</p>
+<p>Password: shen123123</p>
+
+<h1>Log In</h1>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="email" class="required">Email </label>
+                        <input  type="email" id="email" class="form-control" name="name" formControlName="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="required">Password </label>
+                        <input type="password" id="password" class="form-control" name="age" formControlName="password">
+                    </div>
+                    <button class="btn">Log In</button>
+                    <button routerLink="/signup" class="btn">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

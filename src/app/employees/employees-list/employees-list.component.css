@@ -1,0 +1,20 @@
+*{
+  color: white;
+}
+button{
+  margin: 15px 0;
+  padding: 5px 20px;
+  border-radius: 3px;
+}
+
+.homeBtn{
+  padding: 15px 25px;
+  background-color: #144947;
+  color:  white;
+  font-size: 20px;
+  margin-left: 4px;
+}
+th,td{
+  background-color: #144947;
+}
+

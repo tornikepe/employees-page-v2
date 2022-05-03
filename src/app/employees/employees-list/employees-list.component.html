@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="header">
+        <h1 *ngIf="usersList">{{usersList?.length}} Users</h1>
+        <div>
+          <button class="btn homeBtn" routerLink="/home">Home</button>
+          <button class="btn homeBtn" routerLink="/login" (click)="logOut()">Log Out</button>
+        </div>
+
+      </div>
+      <table class="table">
+        <thead>
+        <tr>
+          <th scope="col">N</th>
+          <th scope="col">nickname</th>
+          <th scope="col">E-mail</th>
+          <th scope="col">Password</th>
+          <th scope="col">Number</th>
+          <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of newArr, index as id">
+          <th scope="row">{{id+1}}</th>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.password}}</td>
+          <td>{{user.number}}</td>
+          <td>
+            <button [routerLink]="['/employees/edit', user.id]" [disabled]="edit(user.id)" class="btn btn-primary">Edit</button>
+          </td>
+          <td>
+            <button [routerLink]="['/employees/delete', user.id]" [disabled]="edit(user.id)" class="btn btn-danger">Delete</button>
+          </td>
+          <td>
+            <button [routerLink]="['/employees/view', user.id]" [disabled]="edit(user.id)" id="view" class="btn btn-warning">View</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <div class="load-more">
+        <button *ngIf="newArr.length < usersList?.length" class="btn homeBtn" (click)="onLoad()">Load more</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
